@@ -20,9 +20,9 @@ Route::resource('/periodes',PeriodeController::class);
 Route::resource('/prodis', ProdiController::class);
 Route::resource('/mahasiswas', MahasiswaController::class);
 
-Route::get('dashboard',[DashboardController::class,'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
-Route::get('/main',function(){
+Route::get('/main', function () {
     return view('main');
 });
 
