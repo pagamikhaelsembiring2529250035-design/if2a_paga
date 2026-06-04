@@ -215,7 +215,7 @@
                                 <img src={{ url('assets/img/user2-160x160.jpg') }} class="rounded-circle shadow"
                                     alt="User Image" />
                                 <p>
-                                    Michael Sanjaya Budi Sugito - Web Developer
+                                   PAGA MIKHAEL SEMBIRING--Manusia biasa
                                     <small>Member since Nov. 2023</small>
                                 </p>
                             </li>
@@ -240,7 +240,16 @@
                             <!--begin::Menu Footer-->
                             <li class="user-footer">
                                 <a href="#" class="btn btn-outline-secondary">Profile</a>
-                                <a href="#" class="btn btn-outline-danger float-end">Sign out</a>
+                                <!-- Authentication -->
+                                <form method="POST" class = "d-inline" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <x-dropdown-link :href="route('logout')"
+                                        onclick="event.preventDefault();
+                                                this.closest('form').submit();" class="btn btn-outline-danger float-end">
+                                        {{ __('Log Out') }}
+                                    </x-dropdown-link>
+                                </form>
                             </li>
                             <!--end::Menu Footer-->
                         </ul>
@@ -276,7 +285,7 @@
                     <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="navigation"
                         aria-label="Main navigation" data-accordion="false" id="navigation">
                         <li class="nav-item">
-                            <a href="{{ route('dashboard.index') }}" class="nav-link">
+                            <a href="{{ route('dashboard') }}" class="nav-link">
                                 <i class="nav-icon bi bi-speedometer"></i>
                                 <p>
                                     Dashboard

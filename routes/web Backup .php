@@ -12,10 +12,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tentang', function (){
-    return view('tentang');
-});
-
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
@@ -26,7 +22,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-
+Route::get('/tentang', function (){
+    return view('tentang');
+});
 
 Route::resource('/fakultas',FakultasController::class);
 Route::resource('/periodes',PeriodeController::class);
