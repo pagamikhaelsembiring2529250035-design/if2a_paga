@@ -9,7 +9,8 @@ use App\Http\Controllers\PeriodeController;
 use App\Http\Controllers\ProdiController;
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return redirect()->route('login');
 });
 
 Route::get('/tentang', function (){
